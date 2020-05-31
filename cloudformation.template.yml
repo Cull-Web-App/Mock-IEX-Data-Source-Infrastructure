@@ -18,7 +18,7 @@ Resources:
         # Linux container with node installed
         ComputeType: BUILD_GENERAL1_SMALL
         Type: LINUX_CONTAINER
-        Image: "aws/codebuild/standard:2.0"
+        Image: "aws/codebuild/standard:3.0"
       # This source record indicates that the code is coming from CodePipeline -- No buildspec specified so buildspec.yml will be used
       Source:
         Type: CODEPIPELINE
@@ -187,6 +187,7 @@ Resources:
                   - "apigateway:PUT"
                   - "apigateway:DELETE"
                   - "apigateway:PATCH"
+                  - "apigateway:UpdateRestApiPolicy"
                 Resource:
                   - "arn:aws:apigateway:*::/restapis*"
                   - "arn:aws:apigateway:*::/apikeys*"
